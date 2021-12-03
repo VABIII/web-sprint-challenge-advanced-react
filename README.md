@@ -118,11 +118,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a class-based and a functional component?
 
+    Functional comps can do everything that class based comps can do. 
+    Class based comps extend the React.Component parent class, and require a render method to return a DOM element.
+    You can use hooks with functional comps, but not class based comps.
+    Class based comps also use a constructor and super method to set state as well. 
+
 2. When does a componentWillMount function be called? What about a componentDidUpdate?
+
+    A componentWillUpdate is called only when a component is initially rendered, while a componentDidUpdate won't
+    run on initial render, it will run everytime the component updates.    
 
 3. Define stateful logic.
 
+    Stateful logic refers to the creation or manipulation of state, and the functions that cause state to be 
+    created or manipulated.
+
+
 4. What are the three step of creating a successful test? What is done in each phase? 
 
+    Arrange, Act, Assert
 
-Ok, got it. Thanks!

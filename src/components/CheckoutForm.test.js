@@ -1,5 +1,4 @@
 import React from "react";
-import MutationObserver from 'mutationobserver-shim';
 import { render, screen } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 import userEvent from "@testing-library/user-event";
@@ -11,18 +10,13 @@ test("renders without errors", () => {
 });
 
 test("shows success message on submit with form details", async() => {
-    render(<CheckoutForm/>)
+    render(<CheckoutForm/>);
 
-    const submitButton = screen.getByRole("button")
-    userEvent.click(submitButton)
+    const submitButton = screen.getByRole("button");
+    userEvent.click(submitButton);
 
-    const successMessageOutput = await screen.findByTestId(/successMessage/i)
-
-    expect(successMessageOutput).toBeInTheDocument()
-
-
-
-
+    const successMessageOutput = await screen.findByTestId(/successMessage/i);
+    expect(successMessageOutput).toBeInTheDocument();
 });
 
 
