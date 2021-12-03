@@ -13,7 +13,7 @@ const initialValue = {
 // Build out the logic needed for a form custom hook (see the useForm.js file)
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
-const CheckoutForm = (props) => {
+const useForm = (initialValue) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [values, setValues] = useState(initialValue);
 
@@ -25,6 +25,15 @@ const CheckoutForm = (props) => {
     e.preventDefault();
     setShowSuccessMessage(true);
   };
+
+  return [values, setValues, showSuccessMessage, setShowSuccessMessage, handleSubmit, handleSubmit]
+}
+
+
+const CheckoutForm = (props) => {
+  const [values, setValues, showSuccessMessage, setShowSuccessMessage, handleSubmit,handleChanges] = useForm(initialValue);
+
+
 
   return (
     <>
